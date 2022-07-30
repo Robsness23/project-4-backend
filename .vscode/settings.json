@@ -1,0 +1,11 @@
+{
+  "workbench.colorCustomizations": {
+    "statusBar.background": "#688d7d",
+    "titleBar.activeBackground": "#688d7d",
+    "titleBar.inactiveBackground": "#688d7d",
+    "statusBar.foreground": "#000",
+    "titleBar.inactiveForeground": "#000",
+    "titleBar.activeForeground": "#000",
+  },
+  "window.title": "PROJECT 4 BACKEND"
+}
