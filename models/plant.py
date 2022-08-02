@@ -38,9 +38,5 @@ class PlantModel(db.Model, BaseModel):
     user = db.relationship('UserModel', backref='users')
 
 
-# TO DO :
-# 1. Users
-# 2. Comments
-
 
 

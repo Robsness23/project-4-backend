@@ -9,5 +9,3 @@ class CommentSchema(ma.SQLAlchemyAutoSchema):
         load_instance = True
 
     user = fields.Nested("UserSchema", many=False)
-
-        
