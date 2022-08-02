@@ -3,6 +3,8 @@
 from flask import Flask
 from flask_sqlalchemy import SQLAlchemy
 from config.environment import db_URI
+from flask_marshmallow import Marshmallow
+from flask_bcrypt import Bcrypt
 
 
 # ? Instantiate flask
@@ -19,9 +21,16 @@ app.config["SQLALCHEMY_TRACK_MODIFICATIONS"] = False
 # This is telling Flask SQLAlchemy where the db lives on our system
 db = SQLAlchemy(app)
 
-# ? Make a very basic route to talk to...
-# * This @ syntax is a 'Decorator'. This decorator tell us
-# * Which route our function belong to (our path for this route)
-@app.route("/hello")
-def home():
-    return { "hello": "world" }
+# Instantiating Marshmallow framework
+ma = Marshmallow(app)
+
+# Instantiating my Bcrypt class
+bcrypt = Bcrypt(app)
+
+# Import controllers so that I can register it and prefix it with "/api"
+from controllers import plants
+
+app.register_blueprint(plants.router, url_prefix="/api")
+# app.register_blueprint(seasons.router, url_prefix="/api")
+# app.register_blueprint(pollinators.router, url_prefix="/api")
+# app.register_blueprint(users.router, url_prefix="/api")
