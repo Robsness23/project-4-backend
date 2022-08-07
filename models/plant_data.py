@@ -29,7 +29,6 @@ hoverfly = PollinatorModel(type="Hoverfly")
 mosquito = PollinatorModel(type="Mosquito")
 bird = PollinatorModel(type="Bird")
 fly = PollinatorModel(type="Fly")
-mammal = PollinatorModel(type="Mammal")
 beetle = PollinatorModel(type="Beetle")
 other = PollinatorModel(type="Other")
 
@@ -48,7 +47,9 @@ plants_list = [
     PlantModel(name="Marigold", latinName="Tagetes", description="Marigolds are annual flowers that range from red to orange to yellow. Like calendula, they are excellent companion plants. They repel pest insects like cabbage moths. French marigolds are also reported to deter root-knot nematodes in soil.", seasons=[autumn_season], pollinators=[butterfly, moth], image="https://res.cloudinary.com/dlxbte5xh/image/upload/v1659194606/pexels-gm-rajib-3524048_owybof.jpg", user_id=1),
     PlantModel(name="Nasturtium", latinName="Tropaeolum", description="Easy to grow, sprawling, edible, lovely nasturtium! The peppery arugula-like leaves are edible, as well as the flowers. The blooms come in a variety of colors, and provide pollen and nectar for our garden friends.", seasons=[autumn_season], pollinators=[bee, bird, moth], image="https://res.cloudinary.com/dlxbte5xh/image/upload/v1659194791/pexels-jeffry-surianto-8974474_cpr9eu.jpg", user_id=1),
     PlantModel(name="Verbena", latinName="Vervain", description="Verbena is a huge family that includes over 250 species of both annual and perennial plants. Most of them produce flowers that pollinators go wild for!", seasons=[autumn_season], pollinators=[butterfly, bird], image="https://res.cloudinary.com/dlxbte5xh/image/upload/v1659194921/pexels-erik-karits-9181492_bgot4x.jpg", user_id=1),
-    PlantModel(name="Pincushion", latinName="Scabiosa", description="ound, frilly, tufted flowers that appear in lavender, blues, pink and white. Most varieties are fairly short, averaging around a foot tall. Because they are compact, these cute plants for pollinators are well-suited for containers and borders.", seasons=[autumn_season], pollinators=[butterfly, bee], image="https://res.cloudinary.com/dlxbte5xh/image/upload/v1659195081/pexels-clayton-5732792_f3b7bi.jpg", user_id=1)
+    PlantModel(name="Pincushion", latinName="Scabiosa", description="ound, frilly, tufted flowers that appear in lavender, blues, pink and white. Most varieties are fairly short, averaging around a foot tall. Because they are compact, these cute plants for pollinators are well-suited for containers and borders.", seasons=[autumn_season], pollinators=[butterfly, bee], image="https://res.cloudinary.com/dlxbte5xh/image/upload/v1659195081/pexels-clayton-5732792_f3b7bi.jpg", user_id=1),
+    PlantModel(name="Hibiscus", latinName="Malvaceae", description="Hibiscus flowers are loved by hummingbirds. Even though they attract other pollinators like butterflies, the exposed stamen allows for easy nectar collection.", seasons=[summer_season, autumn_season], pollinators=[butterfly, bee, hummingbird], image="https://res.cloudinary.com/dlxbte5xh/image/upload/v1659634327/pexels-philippe-donn-1133957_a5ngzd.jpg", user_id=1),
+    PlantModel(name="Dahlia", latinName="Asteraceae", description="Dahlias are very good for bees because as they are a good source of pollen and they attract a lot of bees. This is why most people will advise that you locate your beehives very close to dahlia flowers", seasons=[summer_season, autumn_season], pollinators=[bee, hummingbird, beetle, bat, ant], image="https://res.cloudinary.com/dlxbte5xh/image/upload/v1659881040/pexels-amber-shadow-8585187_dg1iqr.jpg", user_id=1)
 ]
 
 comments_list = [CommentModel(content="Beautiful flower that has attracted so many pollinators!", plant_id=1, user_id=1)]

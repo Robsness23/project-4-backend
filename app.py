@@ -28,9 +28,10 @@ ma = Marshmallow(app)
 bcrypt = Bcrypt(app)
 
 # Import controllers so that I can register it and prefix it with "/api"
-from controllers import plants, users, pollinators, seasons
+from controllers import plants, users, pollinators, seasons, comments
 
 app.register_blueprint(plants.router, url_prefix="/api")
 app.register_blueprint(seasons.router, url_prefix="/api")
 app.register_blueprint(pollinators.router, url_prefix="/api")
 app.register_blueprint(users.router, url_prefix="/api")
+app.register_blueprint(comments.router, url_prefix="/api")

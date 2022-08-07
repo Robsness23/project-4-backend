@@ -1,10 +1,11 @@
 from http import HTTPStatus
-
-from flask import Blueprint, request
+from flask import Blueprint, request, g
 from models.comment import CommentModel
 from serializers.comment import CommentSchema
 from marshmallow.exceptions import ValidationError
 from middleware.secure_route import secure_route
+from app import db
+
 
 # Instantiate the schema
 comment_schema = CommentSchema()

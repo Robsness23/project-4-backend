@@ -22,12 +22,12 @@ class PlantModel(db.Model, BaseModel):
     image = db.Column(db.Text, nullable=False, unique=True)
 
     # I need to add a foreign key column to plants, with user_id
-    user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete='CASCADE'), nullable=True)
+    user_id = db.Column(db.Integer, db.ForeignKey("users.id", ondelete='CASCADE'), nullable=False)
 
     # Here I am letting FSQLAlchemy know about the new table for seasons, I am also telling it about the JOIN table: plant_season
-    seasons = db.relationship('SeasonModel', backref='seasons', secondary=plant_season)
+    seasons = db.relationship('SeasonModel', backref='seasons', secondary=plant_season, cascade='all, delete')
     # Here I am letting FSQLAlchemy know about the new table for pollinators, I am also telling it about the JOIN table: plant_pollinator
-    pollinators = db.relationship('PollinatorModel', backref='pollinators', secondary=plant_pollinator)
+    pollinators = db.relationship('PollinatorModel', backref='pollinators', secondary=plant_pollinator, cascade='all, delete')
 
     # The below line is for serialization. It tells our comment about our plant model.
     # This is the code that associates the two models together

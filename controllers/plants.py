@@ -8,9 +8,12 @@ from marshmallow.exceptions import ValidationError
 from middleware.secure_route import secure_route
 from models.plant import PlantModel
 from serializers.plant import PlantSchema
+from serializers.comment import CommentSchema
 
 # Instantiate the plant schema
 plant_schema = PlantSchema()
+
+comment_schema = CommentSchema()
 
 # Instantiate the router
 # This take, __name__, and a unique name to register
@@ -63,8 +66,8 @@ def create_plant():
     # Add a current user
     plant.user_id = g.current_user.id
     plant.save()
-    jsondumps = plant_schema.dumps(plant)
-    print(jsondumps, type(jsondumps))
+    # jsondumps = plant_schema.dumps(plant)
+    # print(jsondumps, type(jsondumps))
     return plant_schema.jsonify(plant), HTTPStatus.CREATED
 
 # PUT a plant
@@ -85,17 +88,17 @@ def update_plant(plant_id):
     return plant_schema.jsonify(plant), HTTPStatus.OK
 
 # DELETE 1 plant through ID
-@router.route("/plant/<int:plant_id>", methods=["DELETE"])
+@router.route("/plants/<int:plant_id>", methods=["DELETE"])
 @secure_route
 def delete_plant(plant_id): 
-    plant = PlantModel.query.get(plant_id)
     existing_plant = PlantModel.query.get(plant_id)
 
     if not g.current_user.id == existing_plant.user_id:
         return { "message": "Not your plant to delete" }, HTTPStatus.UNAUTHORIZED
-    if not plant:
+    if not existing_plant:
         return { "message": "Plant not found" }, HTTPStatus.NOT_FOUND
-    plant.remove()
+    print('Hello world')
+    existing_plant.remove()
     return '', HTTPStatus.NO_CONTENT
 
 # * ------------------------------------------------------------------------------------------------------------------------------- * #

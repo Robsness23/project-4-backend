@@ -1,4 +1,3 @@
-from xml.etree.ElementTree import Comment
 from app import ma
 from models.comment import CommentModel
 from marshmallow import fields
