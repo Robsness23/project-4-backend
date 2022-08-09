@@ -20,9 +20,9 @@ def register():
         return user_schema.jsonify(user)
         # Specific error
     except ValidationError as e:
-        return{"errors": e.messages, "messages": "Something went wrong"}
+        return{"errors": e.messages, "messages": "Something went wrong"}, HTTPStatus.UNAUTHORIZED
     except Exception as e:
-        return {"messages": "Something went wrong"}
+        return {"messages": "Something went wrong"}, HTTPStatus.UNAUTHORIZED
 
 # * ------------------------------------------------------------------------------------- * #
 
@@ -37,7 +37,7 @@ def login():
         user = UserModel.query.filter_by(email=credentials_dictionary["email"]).first()
         # If there is no user registered to that email, return the below
         if not user:            
-            return{"message": "No user found for this email"}
+            return{"message": "No user found for this email"}, HTTPStatus.UNAUTHORIZED
         # Checking to see whether the password matches the hashed one that is stored in the db
         if not user.validate_password(credentials_dictionary["password"]):
             return {"message": "Password does not match"}, HTTPStatus.UNAUTHORIZED
