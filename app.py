@@ -5,6 +5,7 @@ from flask_sqlalchemy import SQLAlchemy
 from config.environment import db_URI
 from flask_marshmallow import Marshmallow
 from flask_bcrypt import Bcrypt
+from flask_cors import CORS
 
 
 # ? Instantiate flask
@@ -12,6 +13,7 @@ from flask_bcrypt import Bcrypt
 # ? where you run flask from. If you run this directly,
 # ? it will be '__main__'
 app = Flask(__name__)
+CORS(app)
 
 # Configuring it with flask
 app.config["SQLALCHEMY_DATABASE_URI"] = db_URI
