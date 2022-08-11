@@ -27,7 +27,7 @@ with app.app_context():
         db.session.add_all(comments_list)
         db.session.commit()
 
-        print("👋🏻 cheerio!")
+        print("😘")
 
     except Exception as e:
         print(e)
