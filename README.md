@@ -1,3 +1,4 @@
+### ![GA](https://cloud.githubusercontent.com/assets/40461/8183776/469f976e-1432-11e5-8199-6ac91363302b.png) General Assembly - Software Engineering Immersive
 # Project Pollinator
 
 Project Pollinator is a website with two goals, one to inspire people to grow ‘nectar cafes’ in their gardens to attract pollinators and the second to be a working database or a ‘hive mind’ for people to upload plants that attract and provide nutrients for pollinators. This is a full stack project where I was able to use Python, PostgreSQL and Flask for the backend and React on the frontend. The project was a solo one that took just over two weeks to build.
